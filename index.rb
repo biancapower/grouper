@@ -22,16 +22,15 @@ group_size = gets.chomp.to_i
 
 i = 0
 
-while people.length > 0
+while !people.empty?
+
   groups[i] = []
 
-  puts "i = #{i}"
-  
   j = 0
-  while j < group_size && people.length > 0
+  while j < group_size && !people.empty?
     groups[i] << people.pop
 
-    print "when i is #{i} and j is #{j}, groups = #{groups}\n" 
+    # print "when i is #{i} and j is #{j}, groups = #{groups}\n" 
 
     j += 1
   end
@@ -40,4 +39,7 @@ while people.length > 0
 
 end
 
-print groups
+for group in groups
+  print group
+  puts
+end
