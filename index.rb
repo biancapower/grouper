@@ -28,7 +28,7 @@ while people.length > 0
   puts "i = #{i}"
   
   j = 0
-  while j < group_size
+  while j < group_size && people.length > 0
     groups[i] << people.pop
 
     print "when i is #{i} and j is #{j}, groups = #{groups}\n" 
