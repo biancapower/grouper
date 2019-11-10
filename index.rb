@@ -21,12 +21,13 @@ puts "Enter number of people in each group as an integer: "
 group_size = gets.chomp.to_i
 
 i = 0
-j = 0
 
-# while i < people.length
+while people.length > 0
   groups[i] = []
 
+  puts "i = #{i}"
   
+  j = 0
   while j < group_size
     groups[i] << people.pop
 
@@ -37,6 +38,6 @@ j = 0
 
   i += 1
 
-#end
+end
 
 print groups
