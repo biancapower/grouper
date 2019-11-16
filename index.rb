@@ -4,9 +4,9 @@ prompt = TTY::Prompt.new
 add_people = prompt.yes?('Do you want to add your own names?')
 
 if add_people
-  people = prompt.multiline("Enter one name on each line")
+  initial_people = prompt.multiline("Enter one name on each line")
 else
-  people = [
+  initial_people = [
     "Bianca",
     "Alex",
     "Hiren",
@@ -28,6 +28,10 @@ end
 groups = []
 
 
+# only keep people who are here right now
+people = prompt.multi_select("Who's here today?", initial_people)
+
+puts "People here today are: #{people}"
 
 
 
