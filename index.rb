@@ -1,19 +1,28 @@
-people = [
-  "Bianca",
-  "Alex",
-  "Hiren",
-  "Ignacio",
-  "Niraj",
-  "Louise",
-  "Jamie",
-  "Ken",
-  "Su",
-  "Cat",
-  "Amrit",
-  #"Luisa",
-  #"Emil",
-  # "Robin"
-]
+require "tty-prompt"
+prompt = TTY::Prompt.new
+
+add_people = prompt.yes?('Do you want to add your own names?')
+
+if add_people
+  people = prompt.multiline("Enter one name on each line")
+else
+  people = [
+    "Bianca",
+    "Alex",
+    "Hiren",
+    "Ignacio",
+    "Niraj",
+    "Louise",
+    "Jamie",
+    "Ken",
+    "Su",
+    "Cat",
+    "Amrit",
+    #"Luisa",
+    #"Emil",
+    # "Robin"
+  ]
+end
 
 # initialise empty array to store groups in
 groups = []
